@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+     
+    <script src="https://kit.fontawesome.com/e40bf81ade.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+      <div class="wrapper">
+
+        <div class="page-info">
+          <p class="site-note">Welcome to Event Finder! Search for the nearst activities in your neigbourhood!</p>
+          <button id="accept">Let's get to it!</button>
+        </div>
+
+        <div class="map-wrapper">
+          <div id='map' style='width: 100%; height: 100vh;'>
+            <div class="info">
+              <div class="button-wrap"><button id="show_form">Add event</button></div>
+              <div class="event-list">
+                <p class="event-list-title">List of events:</p>
+              </div>
+              <ul id="info_data">
+              </ul>
+            </div>
+          </div>
+          </div>
+          <div id="add_help" class="add_help">
+            Kliknij dwa razy w miejsce w którym chcesz utworzyć znacznik.
+          </div>
+        </div>
+       
+        
+
+      <form id="info_form" class="form-modal" >
+        <div class="form_item">
+          <label for="place_name">Lokalizacja spotkania</label>
+          <input type="text" id="place_name" placeholder="Add place name... (ex.Main Square, Park)">
+        </div>
+        <div class="form_item">
+          <label for="place_time">Czas spotkania</label>
+          <input type="time" id="place_time">
+        </div>
+        <div class="form_item">
+          <label for="additional_info">Dodatkowe informacje odnośnie spotkania</label>
+          <input type="text" id="additional_info" placeholder="Add additional info...">
+        </div>
+        <div class="form_item">
+          <button id="submit" type="submit" data-active>Dalej</button>
+          <button id="cancel_form">Cancel</button>
+        </div>
+      </form>
+
+  </body>
+
+  
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+  <script src="script.js"></script>
+</html>
+
